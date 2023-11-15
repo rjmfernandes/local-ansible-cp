@@ -33,21 +33,6 @@ services:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
     privileged: true
     cgroup: host
-  ##kc1:
-    ##image: geerlingguy/docker-centos7-ansible:python3
-    ##hostname: kc1
-    ##container_name: kc1
-    ##entrypoint: ["rm","-f","/usr/bin/python &&  ln -s /usr/bin/python3 /usr/bin/python"]
-  ##kc2:
-    ##image: geerlingguy/docker-centos7-ansible:python3
-    ##hostname: kc2
-    ##container_name: kc2
-    ##entrypoint: ["rm","-f","/usr/bin/python &&  ln -s /usr/bin/python3 /usr/bin/python"]
-  ##kc3:
-    ##image: geerlingguy/docker-centos7-ansible:python3
-    ##hostname: kc3
-    ##container_name: kc3
-    ##entrypoint: ["rm","-f","/usr/bin/python &&  ln -s /usr/bin/python3 /usr/bin/python"]
   kafka1:
     image: my-geerlingguy-docker-centos7-ansible:latest
     hostname: kafka1
