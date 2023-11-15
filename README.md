@@ -58,3 +58,16 @@ You will need to map the host names on your `/etc/hosts` file:
 127.0.0.1 cc
 ```
 
+Finally run:
+
+```bash
+ansible-galaxy collection install git+https://github.com/confluentinc/cp-ansible.git,7.5.x
+```
+
+And deploy:
+
+```bash
+ansible-playbook ./all.yml -i hosts.yml
+```
+
+You should be able to access control center on usual port http://localhost:9021/clusters
