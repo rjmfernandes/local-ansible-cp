@@ -1,0 +1,130 @@
+---
+# This docker-compose file will start some containers that act like VMs in a VPC
+version: '3.5'
+
+services:
+  zk1:
+    image: my-geerlingguy-docker-centos7-ansible:latest
+    hostname: zk1
+    container_name: zk1 
+    ports:
+     - "2181:2181"
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    cgroup: host
+  zk2:
+    image: my-geerlingguy-docker-centos7-ansible:latest
+    hostname: zk2
+    container_name: zk2
+    ports:
+     - "2182:2181"
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    cgroup: host
+  zk3:
+    image: my-geerlingguy-docker-centos7-ansible:latest
+    hostname: zk3
+    container_name: zk3
+    ports:
+     - "2183:2181"
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    cgroup: host
+  ##kc1:
+    ##image: geerlingguy/docker-centos7-ansible:python3
+    ##hostname: kc1
+    ##container_name: kc1
+    ##entrypoint: ["rm","-f","/usr/bin/python &&  ln -s /usr/bin/python3 /usr/bin/python"]
+  ##kc2:
+    ##image: geerlingguy/docker-centos7-ansible:python3
+    ##hostname: kc2
+    ##container_name: kc2
+    ##entrypoint: ["rm","-f","/usr/bin/python &&  ln -s /usr/bin/python3 /usr/bin/python"]
+  ##kc3:
+    ##image: geerlingguy/docker-centos7-ansible:python3
+    ##hostname: kc3
+    ##container_name: kc3
+    ##entrypoint: ["rm","-f","/usr/bin/python &&  ln -s /usr/bin/python3 /usr/bin/python"]
+  kafka1:
+    image: my-geerlingguy-docker-centos7-ansible:latest
+    hostname: kafka1
+    container_name: kafka1
+    ports:
+     - "9092:9092"
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    cgroup: host
+  kafka2:
+    image: my-geerlingguy-docker-centos7-ansible:latest
+    hostname: kafka2
+    container_name: kafka2
+    ports:
+     - "9093:9092"
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    cgroup: host
+  kafka3:
+    image: my-geerlingguy-docker-centos7-ansible:latest
+    hostname: kafka3
+    container_name: kafka3
+    ports:
+     - "9094:9092"
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    cgroup: host
+  sr:
+    image: my-geerlingguy-docker-centos7-ansible:latest
+    hostname: sr
+    container_name: sr
+    ports:
+     - "8081:8081"
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    cgroup: host
+  rest:
+    image: my-geerlingguy-docker-centos7-ansible:latest
+    hostname: rest
+    container_name: rest
+    ports:
+     - "8082:8082"
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    cgroup: host
+  ksql-server:
+    image: my-geerlingguy-docker-centos7-ansible:latest
+    hostname: ksql-server
+    container_name: ksql-server
+    ports:
+     - "8088:8088"
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    cgroup: host
+  connect:
+    image: my-geerlingguy-docker-centos7-ansible:latest
+    hostname: connect
+    container_name: connect
+    ports:
+     - "8083:8083"
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    cgroup: host
+  cc:
+    image: my-geerlingguy-docker-centos7-ansible:latest
+    hostname: cc
+    container_name: cc
+    ports:
+     - "9021:9021"
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    cgroup: host
