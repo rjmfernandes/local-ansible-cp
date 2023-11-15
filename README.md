@@ -34,7 +34,7 @@ Edit the variables of hosts.yml as the example here. Pay attention yo the follow
     custom_java_path: /usr/lib/jvm/java-17-openjdk-arm64
 ```
 
-You will also want to make sure the server instances in hosts.yml match the ones defined in the docker-compose.yml file (just like the example here). Comment out either kafka_controller instances or the zookeeper one.
+You will also want to make sure the server instances in hosts.yml match the ones defined in the docker-compose.yml file (just like the example here). Comment out either kafka_controller entry or the zookeeper one.
 
 Finally run the docker-compose:
 
