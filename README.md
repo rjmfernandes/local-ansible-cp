@@ -19,6 +19,7 @@ git clone https://github.com/confluentinc/cp-ansible.git
 Inside the repository you need to copy the playbooks to root:
 
 ```bash
+cd cp-ansible
 cp -fr playbooks/* .
 ```
 
@@ -36,7 +37,7 @@ Edit the variables of hosts.yml as the example here. Pay attention to the follow
 
 You will also want to make sure the server instances in hosts.yml match the ones defined in the docker-compose.yml file (just like the example here). Comment out either kafka_controller entry or the zookeeper one.
 
-Finally run the docker-compose:
+Finally run the docker-compose from within this project:
 
 ```bash
 docker compose up -d
@@ -58,15 +59,10 @@ You will need to map the host names on your `/etc/hosts` file:
 127.0.0.1 cc
 ```
 
-Finally run:
+Finally back to the cp-ansible cloned repository run:
 
 ```bash
 ansible-galaxy collection install git+https://github.com/confluentinc/cp-ansible.git,7.5.x
-```
-
-And deploy:
-
-```bash
 ansible-playbook ./all.yml -i hosts.yml
 ```
 
