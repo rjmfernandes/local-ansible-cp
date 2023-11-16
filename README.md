@@ -22,7 +22,7 @@ Inside the repository you need to copy the playbooks to root:
 cp -fr playbooks/* .
 ```
 
-Edit the variables of hosts.yml as the example here. Pay attention yo the following variables:
+Edit the variables of hosts.yml as the example here. Pay attention to the following variables:
 
 ```yml
     ansible_connection: docker
