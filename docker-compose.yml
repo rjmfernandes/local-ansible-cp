@@ -4,7 +4,7 @@ version: '3.5'
 
 services:
   zk1:
-    image: my-geerlingguy-docker-centos7-ansible:latest
+    image: my-geerlingguy-docker-ubuntu-ansible:latest
     hostname: zk1
     container_name: zk1 
     ports:
@@ -14,7 +14,7 @@ services:
     privileged: true
     cgroup: host
   zk2:
-    image: my-geerlingguy-docker-centos7-ansible:latest
+    image: my-geerlingguy-docker-ubuntu-ansible:latest
     hostname: zk2
     container_name: zk2
     ports:
@@ -24,7 +24,7 @@ services:
     privileged: true
     cgroup: host
   zk3:
-    image: my-geerlingguy-docker-centos7-ansible:latest
+    image: my-geerlingguy-docker-ubuntu-ansible:latest
     hostname: zk3
     container_name: zk3
     ports:
@@ -34,7 +34,7 @@ services:
     privileged: true
     cgroup: host
   kafka1:
-    image: my-geerlingguy-docker-centos7-ansible:latest
+    image: my-geerlingguy-docker-ubuntu-ansible:latest
     hostname: kafka1
     container_name: kafka1
     ports:
@@ -44,7 +44,7 @@ services:
     privileged: true
     cgroup: host
   kafka2:
-    image: my-geerlingguy-docker-centos7-ansible:latest
+    image: my-geerlingguy-docker-ubuntu-ansible:latest
     hostname: kafka2
     container_name: kafka2
     ports:
@@ -54,7 +54,7 @@ services:
     privileged: true
     cgroup: host
   kafka3:
-    image: my-geerlingguy-docker-centos7-ansible:latest
+    image: my-geerlingguy-docker-ubuntu-ansible:latest
     hostname: kafka3
     container_name: kafka3
     ports:
@@ -64,7 +64,7 @@ services:
     privileged: true
     cgroup: host
   sr:
-    image: my-geerlingguy-docker-centos7-ansible:latest
+    image: my-geerlingguy-docker-ubuntu-ansible:latest
     hostname: sr
     container_name: sr
     ports:
@@ -74,7 +74,7 @@ services:
     privileged: true
     cgroup: host
   rest:
-    image: my-geerlingguy-docker-centos7-ansible:latest
+    image: my-geerlingguy-docker-ubuntu-ansible:latest
     hostname: rest
     container_name: rest
     ports:
@@ -84,7 +84,7 @@ services:
     privileged: true
     cgroup: host
   ksql-server:
-    image: my-geerlingguy-docker-centos7-ansible:latest
+    image: my-geerlingguy-docker-ubuntu-ansible:latest
     hostname: ksql-server
     container_name: ksql-server
     ports:
@@ -94,7 +94,7 @@ services:
     privileged: true
     cgroup: host
   connect:
-    image: my-geerlingguy-docker-centos7-ansible:latest
+    image: my-geerlingguy-docker-ubuntu-ansible:latest
     hostname: connect
     container_name: connect
     ports:
@@ -104,7 +104,7 @@ services:
     privileged: true
     cgroup: host
   cc:
-    image: my-geerlingguy-docker-centos7-ansible:latest
+    image: my-geerlingguy-docker-ubuntu-ansible:latest
     hostname: cc
     container_name: cc
     ports:
