@@ -23,6 +23,12 @@ cd cp-ansible
 cp -fr playbooks/* .
 ```
 
+Copy hosts.yml to cp-ansible.
+
+```bash
+cp ../hosts.yml .
+```
+
 Edit the variables of hosts.yml as the example here. Pay attention to the following variables:
 
 ```yml
@@ -37,9 +43,10 @@ Edit the variables of hosts.yml as the example here. Pay attention to the follow
 
 You will also want to make sure the server instances in hosts.yml match the ones defined in the docker-compose.yml file (just like the example here). Comment out either kafka_controller entry or the zookeeper one.
 
-Finally run the docker-compose from within this project:
+Finally run the docker-compose from the root of the project:
 
 ```bash
+cd ..
 docker compose up -d
 ```
 
@@ -62,6 +69,7 @@ You will need to map the host names on your `/etc/hosts` file:
 Finally back to the cp-ansible cloned repository run:
 
 ```bash
+cd cp-ansible
 ansible-galaxy collection install git+https://github.com/confluentinc/cp-ansible.git,7.5.x
 ansible-playbook ./all.yml -i hosts.yml
 ```
