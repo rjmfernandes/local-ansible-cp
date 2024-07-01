@@ -4,6 +4,7 @@
 
 ```bash
     git clone git@github.com:tomasalmeida/local-ansible-cp.git
+    cd local-ansible-cp
 ```
 
 ## Build the base image
