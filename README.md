@@ -1,5 +1,13 @@
 # Local Ansible CP Based on Docker Instances (MacOS)
 
+## Get it
+
+```bash
+    git clone git@github.com:tomasalmeida/local-ansible-cp.git
+```
+
+## Build the base image
+
 The image used for our instances comes from the work by Jeff Geerling https://github.com/geerlingguy/docker-ubuntu2204-ansible
 
 We have added a couple of packages including java and changed the ubuntu version for compatibility with CP Ansible.
@@ -10,11 +18,7 @@ First you will need to create the image:
 docker build . -t my-geerlingguy-docker-ubuntu-ansible
 ```
 
-You will also need to clone the CP Ansible git repository.
-
-```bash
-git clone https://github.com/confluentinc/cp-ansible.git
-```
+The folder cp-ansible is a submodule from Confluent CP Ansible git repository (https://github.com/confluentinc/cp-ansible) using the tag for CP 7.5.4
 
 Inside the repository you need to copy the playbooks to root:
 
@@ -70,7 +74,7 @@ Finally back to the cp-ansible cloned repository run:
 
 ```bash
 cd cp-ansible
-ansible-galaxy collection install git+https://github.com/confluentinc/cp-ansible.git,7.5.x
+ansible-galaxy collection install git+https://github.com/confluentinc/cp-ansible.git,v7.5.4
 ansible-playbook ./all.yml -i hosts.yml
 ```
 
