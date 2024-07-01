@@ -1,4 +1,4 @@
 [submodule "cp-ansible"]
 	path = cp-ansible
 	url = https://github.com/confluentinc/cp-ansible.git
-	branch = 7.4.5-post
+	branch = 7.5.4-post
