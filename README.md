@@ -3,7 +3,7 @@
 ## Get it
 
 ```bash
-    git clone git@github.com:tomasalmeida/local-ansible-cp.git
+    git clone git@github.com:tomasalmeida/local-ansible-cp.git --recursive 
     cd local-ansible-cp
 ```
 
@@ -19,7 +19,11 @@ First you will need to create the image:
 docker build . -t my-geerlingguy-docker-ubuntu-ansible
 ```
 
-The folder cp-ansible is a submodule from Confluent CP Ansible git repository (https://github.com/confluentinc/cp-ansible) using the tag for CP 7.5.4
+The folder cp-ansible is a submodule from Confluent CP Ansible git repository (https://github.com/confluentinc/cp-ansible) using the tag for CP 7.5.4. If the folder is empty, it is because you cloned it without the flag `--recursive`. So in that case do:
+
+```bash
+    git submodule update --init
+```
 
 Inside the repository you need to copy the playbooks to root:
 
