@@ -1,11 +1,15 @@
 # Local Ansible CP Based on Docker Instances (MacOS)
 
-## Get it
 
-```bash
-    git clone git@github.com:tomasalmeida/local-ansible-cp.git --recursive 
-    cd local-ansible-cp
-```
+- [Local Ansible CP Based on Docker Instances (MacOS)](#local-ansible-cp-based-on-docker-instances-macos)
+  - [Disclaimer](#disclaimer)
+  - [Build the base image](#build-the-base-image)
+  - [Cleanup](#cleanup)
+
+## Disclaimer
+
+The code and/or instructions here available are **NOT** intended for production usage. 
+It's only meant to serve as an example or reference and does not replace the need to follow actual and official documentation of referenced products.
 
 ## Build the base image
 
@@ -47,7 +51,7 @@ Edit the variables of hosts.yml as the example here. Pay attention to the follow
     ssl_enabled: false
     confluent.platform.ssl_required: false
     ansible_python_interpreter: /usr/bin/python3
-    custom_java_path: /usr/lib/jvm/java-17-openjdk-arm64
+    custom_java_path: /usr/lib/jvm/java-1.17.0-openjdk-arm64
 ```
 
 You will also want to make sure the server instances in hosts.yml match the ones defined in the docker-compose.yml file (just like the example here). Comment out either kafka_controller entry or the zookeeper one.
@@ -84,3 +88,10 @@ ansible-playbook ./all.yml -i hosts.yml
 ```
 
 You should be able to access control center on usual port http://localhost:9021/clusters
+
+## Cleanup
+
+```bash
+cd ..
+docker compose up -d
+```
