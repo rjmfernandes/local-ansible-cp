@@ -23,10 +23,10 @@ First you will need to create the image:
 docker build . -t my-geerlingguy-docker-ubuntu-ansible
 ```
 
-The folder cp-ansible is a submodule from Confluent CP Ansible git repository (https://github.com/confluentinc/cp-ansible) using the tag for CP 7.5.4. If the folder is empty, it is because you cloned it without the flag `--recursive`. So in that case do:
+Clone locally the repository:
 
-```bash
-    git submodule update --init
+```shell
+git clone --depth 1 --branch v7.5.4 https://github.com/confluentinc/cp-ansible
 ```
 
 Inside the repository you need to copy the playbooks to root:
