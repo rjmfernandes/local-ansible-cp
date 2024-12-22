@@ -4,6 +4,9 @@
 - [Local Ansible CP Based on Docker Instances (MacOS)](#local-ansible-cp-based-on-docker-instances-macos)
   - [Disclaimer](#disclaimer)
   - [Build the base image](#build-the-base-image)
+  - [CP Ansible](#cp-ansible)
+  - [Start Containers](#start-containers)
+  - [Deploy with Ansible](#deploy-with-ansible)
   - [Cleanup](#cleanup)
 
 ## Disclaimer
@@ -22,6 +25,8 @@ First you will need to create the image:
 ```bash
 docker build . -t my-geerlingguy-docker-ubuntu-ansible
 ```
+
+## CP Ansible
 
 Clone locally the repository:
 
@@ -56,6 +61,8 @@ Edit the variables of hosts.yml as the example here. Pay attention to the follow
 
 You will also want to make sure the server instances in hosts.yml match the ones defined in the docker-compose.yml file (just like the example here). Comment out either kafka_controller entry or the zookeeper one.
 
+## Start Containers
+
 Finally run the docker-compose from the root of the project:
 
 ```bash
@@ -78,6 +85,8 @@ You will need to map the host names on your `/etc/hosts` file:
 127.0.0.1 connect
 127.0.0.1 cc
 ```
+
+## Deploy with Ansible
 
 Finally back to the cp-ansible cloned repository run:
 
