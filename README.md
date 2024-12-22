@@ -102,5 +102,6 @@ You should be able to access control center on usual port http://localhost:9021/
 
 ```bash
 cd ..
+rm -fr cp-ansible
 docker compose down -v
 ```
